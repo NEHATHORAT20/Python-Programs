@@ -1,7 +1,11 @@
 #Write a lambda function using filter () which accepts a list of numbers and returns the count of even numbers.
 
-No = [1, 2, 3, 4, 5, 6, 7, 8]
+def main():
+    Data = [11, 34, 56, 78]
+    print("The data is:", Data)
 
-Result = len(list(filter(lambda x: x % 2 == 0, No)))
+    Fdata = list(filter(lambda No: No % 2 == 0, Data))
+    print("Count of even numbers is:", len(Fdata))
 
-print("Count of Even Numbers : ", Result)
+if __name__ == "__main__":
+    main()
