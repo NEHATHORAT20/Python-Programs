@@ -2,8 +2,12 @@
 
 from functools import reduce
 
-No = [1, 2, 3, 4, 5]
+def main():
+    Data = [1, 2, 3, 4]
+    print("The data is:", Data)
 
-Result = reduce(lambda a, b: a * b, No)
+    Rdata = reduce(lambda A, B: A * B, Data)
+    print("Product is:", Rdata)
 
-print("Product : ", Result)
+if __name__ == "__main__":
+    main()
