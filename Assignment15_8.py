@@ -1,7 +1,11 @@
 #Write a lambda function using filter () which accepts a list of numbers and returns a list of numbers divisible by both 3 and 5.
 
-Value = [10, 15, 30, 25, 9, 45]
+def main():
+    Data = [10, 15, 30, 25, 45]
+    print("The data is:", Data)
 
-Result = list(filter(lambda No: No % 3 == 0 and No % 5 == 0, Value))
+    Fdata = list(filter(lambda No: No % 3 == 0 and No % 5 == 0, Data))
+    print("Numbers divisible by 3 and 5:", Fdata)
 
-print("Divisible by 3 and 5:", Result)
+if __name__ == "__main__":
+    main()
