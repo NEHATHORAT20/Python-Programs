@@ -1,7 +1,11 @@
 #Write a lambda function using filter () which accepts a list of strings and returns a list of strings having length greater than 5.
 
-Names = ["Python", "Java", "Angular", "C", "Javascript" , "Marvellous"]
+def main():
+    Data = ["Python", "Java", "Angular", "C"]
+    print("The data is:", Data)
 
-Result = list(filter(lambda x: len(x) > 5, Names))
+    Fdata = list(filter(lambda Str: len(Str) > 5, Data))
+    print("Strings with length > 5:", Fdata)
 
-print("Strings with length > 5 : " , Result)
+if __name__ == "__main__":
+    main()
