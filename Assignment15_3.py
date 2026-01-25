@@ -1,7 +1,11 @@
 #Write a lambda function using filter () which accepts a list of numbers and returns a list of odd numbers.
 
-No = [1, 2, 3, 4, 5, 6]
+def main():
+    Data = [1, 2, 3, 4, 5, 6]
+    print("The data is:", Data)
 
-Result = list(filter(lambda b: b % 2 != 0, No))
+    Fdata = list(filter(lambda No: No % 2 != 0, Data))
+    print("Odd numbers are:", Fdata)
 
-print("Odd Numbers:", Result)
+if __name__ == "__main__":
+    main()
