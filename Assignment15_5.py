@@ -2,8 +2,13 @@
 
 from functools import reduce
 
-No = [10, 5, 20, 8]
+def main():
+    Data = [10, 5, 20, 8]
+    print("The data is:", Data)
 
-Result = reduce(lambda a, b: a if a > b else b, No)
+    Max = reduce(lambda A, B: A if A > B else B, Data)
+    print("Maximum number is:", Max)
 
-print("Maximum:", Result)
+if __name__ == "__main__":
+    main()
+)
