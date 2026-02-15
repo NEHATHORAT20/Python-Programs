@@ -1,0 +1,8 @@
+--------------------------------------------------
+This is the log file created using python
+This script deletes duplicate files
+--------------------------------------------------
+Deleted file : Demo\Python.txt
+Total duplicate files deleted :1
+This log file is created at : Mon Feb 16 02:53:07 2026
+--------------------------------------------------

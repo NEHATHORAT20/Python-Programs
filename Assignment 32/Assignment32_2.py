@@ -1,0 +1,100 @@
+#Design automation script which accept directory name and write names of duplicate files from that directory into log file named as Log.txt. 
+#Log.txt file should be created into current directory.
+#Usage : DirectoryDusplicate.py "Demo'
+#Demo is name of directory.
+
+import sys
+import os
+import hashlib
+import time
+
+def CalculateCheckSum(fname):
+    fobj = open(fname, "rb")
+
+    hobj = hashlib.md5()
+
+    Buffer = fobj.read(1024)
+
+    while(len(Buffer) > 0):
+        hobj.update(Buffer)
+        Buffer = fobj.read(1024)
+
+    fobj.close()
+
+    return hobj.hexdigest()
+
+def FindDuplicate(Directory):
+    
+    MyDict = {}
+    
+    for FolderName, SubFolderName, FileName in os.walk(Directory):
+        for fname in FileName:
+            fname = os.path.join(FolderName, fname)
+
+            CheckSum = CalculateCheckSum(fname)
+
+            if CheckSum in MyDict:
+                MyDict[CheckSum].append(fname)
+            else:
+                MyDict[CheckSum] = [fname]
+
+    return MyDict
+
+def DisplayDuplicate(Directory):
+    Ret = False
+
+    Ret = os.path.exists(Directory)
+
+    if(Ret == False):
+        fobj.write("There is no such directory\n")
+        return 
+    
+    Ret = os.path.isdir(Directory)
+
+    if(Ret == False):
+        fobj.write("This is not a directory")
+        return
+    
+    MyDict = FindDuplicate(Directory)
+
+    Result = list(filter(lambda x: len(x) > 1, MyDict.values()))  
+    
+    Border = "-"*50
+    timestamp = time.ctime()
+
+    fobj = open("Log.txt", "w")
+
+    fobj.write(Border+"\n")
+    fobj.write("This is the log file created by python\n")
+    fobj.write("This script is a duplicate file identifier\n")
+    fobj.write(Border+"\n")
+
+    Count = 0
+    Cnt = 0
+
+    for value in Result:
+        for subvalue in value:
+            Count = Count + 1
+            if(Count > 1):
+                fobj.write("Duplicate file : "+subvalue+"\n")
+                Cnt = Cnt + 1
+        Count = 0
+
+    fobj.write("Total duplicate files :"+str(Cnt)+"\n")
+    fobj.write("This log file is created at : "+timestamp+"\n")
+    fobj.write(Border+"\n")
+        
+    fobj.close()
+
+def main():
+
+    if(len(sys.argv) != 2):
+        print("Invalid number of arguments")
+        return
+    
+    Directory = sys.argv[1]
+
+    DisplayDuplicate(Directory)
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,4 @@
+File name : Demo\Hello.txt CheckSum : d41d8cd98f00b204e9800998ecf8427e
+File name : Demo\Python.txt CheckSum : d41d8cd98f00b204e9800998ecf8427e
+
+Total files scanned : 2

@@ -1,0 +1,9 @@
+--------------------------------------------------
+This is the log file created using python
+This script deletes duplicate files
+--------------------------------------------------
+Deleted file : Demo\Hello.txt
+Total duplicate files : 1
+Execution time : 0.0025103092193603516
+This log file is created at : Mon Feb 16 03:03:46 2026
+--------------------------------------------------
