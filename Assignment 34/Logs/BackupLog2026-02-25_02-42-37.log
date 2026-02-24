@@ -1,0 +1,8 @@
+2026-02-25 02:42:37,660 - INFO - Backup started
+2026-02-25 02:42:37,672 - INFO - Backup completed Succesfully
+2026-02-25 02:42:37,672 - INFO - Files copied: 3
+2026-02-25 02:42:37,672 - INFO - Zip created: MarvellousBackup_2026-02-25_02-42-37.zip
+2026-02-25 02:42:37,672 - INFO - Copied filename: 1.doc
+2026-02-25 02:42:37,672 - INFO - Copied filename: Hello.txt
+2026-02-25 02:42:37,672 - INFO - Copied filename: Python.py
+2026-02-25 02:42:37,674 - INFO - History updated successfully
